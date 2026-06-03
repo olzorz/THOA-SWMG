@@ -7,6 +7,7 @@
 size = Vector2(2, 1)
 
 [node name="bullet" type="Area2D" unique_id=718686072]
+collision_layer = 0
 script = ExtResource("1_oduel")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1434675880]
@@ -18,5 +19,5 @@ texture = ExtResource("2_ycag2")
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_oduel")
 
-[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

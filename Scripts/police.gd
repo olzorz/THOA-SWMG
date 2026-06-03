@@ -10,7 +10,7 @@ func _ready():
 	player = $"../player"
 
 func _physics_process(delta: float) -> void:
-	direction = (player.global_position - global_position).normalized()
+	direction = global_position.direction_to(player.global_position)
 	velocity = direction * SPEED
-
+	
 	move_and_slide()

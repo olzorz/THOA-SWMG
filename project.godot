@@ -53,6 +53,5 @@ shoot={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
 environment/defaults/default_clear_color=Color(0.8279027, 0.6749464, 0.70501137, 1)

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://6odffn4qoixt"]
+
+[ext_resource type="Script" uid="uid://d0ho1ta6tmlj8" path="res://Scripts/police.gd" id="1_b50pw"]
+[ext_resource type="Texture2D" uid="uid://ddgklxtljv5h" path="res://Assets/police.png" id="2_8r43d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b50pw"]
+radius = 4.0
+
+[node name="police" type="CharacterBody2D" unique_id=1554043192]
+script = ExtResource("1_b50pw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=752772768]
+texture = ExtResource("2_8r43d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=766969340]
+shape = SubResource("CircleShape2D_b50pw")

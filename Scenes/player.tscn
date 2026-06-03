@@ -6,8 +6,8 @@
 [ext_resource type="Script" uid="uid://didlum7dqsxon" path="res://Scripts/gun_pivot.gd" id="3_vgqql"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
-radius = 4.0
-height = 8.0
+radius = 3.5
+height = 7.0
 
 [node name="player" type="CharacterBody2D" unique_id=1717010026]
 script = ExtResource("1_cvnsp")

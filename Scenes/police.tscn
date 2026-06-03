@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0ho1ta6tmlj8" path="res://Scripts/police.gd" id="1_b50pw"]
 [ext_resource type="Texture2D" uid="uid://ddgklxtljv5h" path="res://Assets/police.png" id="2_8r43d"]
-[ext_resource type="Script" uid="uid://dnqtsnqt7tibk" path="res://health_component.gd" id="3_8r43d"]
+[ext_resource type="Script" uid="uid://dnqtsnqt7tibk" path="res://Scripts/health_component.gd" id="3_8r43d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b50pw"]
 radius = 4.0

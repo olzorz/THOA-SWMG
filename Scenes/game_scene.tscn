@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bhdfpyul7vfk5" path="res://Scenes/player.tscn" id="1_x87qo"]
 [ext_resource type="Texture2D" uid="uid://cucsb77qx71kc" path="res://Assets/wall.png" id="2_b6fju"]
-[ext_resource type="Script" uid="uid://dxurshdg6ys01" path="res://spawner_engine.gd" id="4_fiftr"]
+[ext_resource type="Script" uid="uid://dxurshdg6ys01" path="res://Scripts/spawner_engine.gd" id="4_fiftr"]
 
 [sub_resource type="Curve2D" id="Curve2D_fiftr"]
 _data = {

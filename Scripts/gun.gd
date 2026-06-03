@@ -2,7 +2,7 @@ extends Node2D
 
 const BULLET := preload("res://Scenes/bullet.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("shoot"):
 		var bullet_instance = BULLET.instantiate()
 		get_tree().root.add_child(bullet_instance)

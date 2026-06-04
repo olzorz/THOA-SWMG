@@ -26,7 +26,8 @@ shape = SubResource("CapsuleShape2D_cvnsp")
 script = ExtResource("3_vgqql")
 
 [node name="gun" parent="." unique_id=1663054832 instance=ExtResource("3_6t5aa")]
-position = Vector2(19, 5)
+position = Vector2(22, 4.5)
+player = true
 
 [node name="HealthComponent" type="Node" parent="." unique_id=900952249]
 script = ExtResource("5_fkybt")

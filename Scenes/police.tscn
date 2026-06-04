@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d0ho1ta6tmlj8" path="res://Scripts/police.gd" id="1_b50pw"]
 [ext_resource type="Texture2D" uid="uid://ddgklxtljv5h" path="res://Assets/police.png" id="2_8r43d"]
 [ext_resource type="Script" uid="uid://dnqtsnqt7tibk" path="res://Scripts/health_component.gd" id="3_8r43d"]
+[ext_resource type="PackedScene" uid="uid://d0n7seuaqfuqr" path="res://Scenes/gun.tscn" id="4_5t67j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b50pw"]
 radius = 11.0
@@ -25,6 +26,9 @@ metadata/_custom_type_script = "uid://dnqtsnqt7tibk"
 [node name="MovementTimer" type="Timer" parent="." unique_id=1071353759]
 wait_time = 0.5
 autostart = true
+
+[node name="gun" parent="." unique_id=1663054832 instance=ExtResource("4_5t67j")]
+position = Vector2(21, 5)
 
 [connection signal="dead" from="HealthComponent" to="." method="is_dead"]
 [connection signal="timeout" from="MovementTimer" to="." method="movement_calculation"]

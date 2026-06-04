@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var movement_speed : float = 500
 var character_direction : Vector2
+const LOSE_SCREEN = preload("res://Scenes/lose_screen.tscn")
 
 func _physics_process(_delta: float) -> void:
 	character_direction.x = Input.get_axis("move_left", "move_right")
@@ -22,4 +23,8 @@ func _physics_process(_delta: float) -> void:
 
 
 func is_dead() -> void:
+	var lose_position := global_position
+	var lose := LOSE_SCREEN.instantiate()
+	lose.global_position = lose_position
+	get_parent().add_child(lose)
 	queue_free() # Replace with function body.

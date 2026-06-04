@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bssqblyj3a6jx"]
+
+[node name="lose_screen" type="Node2D" unique_id=819457918]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1346635789]
+
+[node name="Label" type="Label" parent="." unique_id=1586593391]
+offset_left = -35.0
+offset_top = -13.0
+offset_right = 35.0
+offset_bottom = 10.0
+text = "You lose!"

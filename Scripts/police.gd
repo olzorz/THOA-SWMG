@@ -20,13 +20,12 @@ func _ready():
 	
 
 func _physics_process(delta: float) -> void:
+	if player:
+		target_location = player.global_position
+	else:
+		state = State.IDLE
 	match state:
 		State.CHASE:
-			if player:
-				target_location = player.global_position
-			else:
-				state = State.IDLE
-			
 			if movement_timer:
 				direction = target_location - global_position
 			if direction.length() > 100:
@@ -35,6 +34,7 @@ func _physics_process(delta: float) -> void:
 				state = State.SHOOT
 			movement_timer = false
 			
+			
 		State.IDLE:
 			if player:
 				state = State.CHASE
@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 				velocity = velocity.move_toward(Vector2.ZERO, movement_speed)
 		
 		State.SHOOT:
-			if player and (target_location - player.global_position).length() > 150:
+			if player and (target_location - global_position).length() > 150:
 				state = State.CHASE
 			elif not player:
 				state = State.IDLE

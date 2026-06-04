@@ -1,7 +1,7 @@
 class_name HealthComponent extends Node
 
 signal dead
-@export var max_health : int
+@export var max_health : int = 1
 var current_health : int
 
 # Called when the node enters the scene tree for the first time.

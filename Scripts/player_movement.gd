@@ -19,3 +19,7 @@ func _physics_process(_delta: float) -> void:
 	#else:
 	#	scale.y = 1
 	move_and_slide()
+
+
+func is_dead() -> void:
+	queue_free() # Replace with function body.

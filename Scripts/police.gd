@@ -11,8 +11,11 @@ func _ready():
 	player = $"../player"
 
 func _physics_process(delta: float) -> void:
-	direction = global_position.direction_to(player.global_position)
-	velocity = direction * SPEED
+	direction = player.global_position - global_position
+	if direction.length() > 100:
+		velocity = direction.normalized() * SPEED
+	else:
+		velocity = Vector2.ZERO
 	look_at(player.global_position)
 	move_and_slide()
 

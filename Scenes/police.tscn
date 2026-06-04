@@ -23,12 +23,7 @@ script = ExtResource("3_8r43d")
 max_health = 2
 metadata/_custom_type_script = "uid://dnqtsnqt7tibk"
 
-[node name="MovementTimer" type="Timer" parent="." unique_id=1071353759]
-wait_time = 0.5
-autostart = true
-
 [node name="gun" parent="." unique_id=1663054832 instance=ExtResource("4_5t67j")]
 position = Vector2(21, 5)
 
 [connection signal="dead" from="HealthComponent" to="." method="is_dead"]
-[connection signal="timeout" from="MovementTimer" to="." method="movement_calculation"]

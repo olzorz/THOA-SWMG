@@ -30,4 +30,5 @@ script = ExtResource("5_fkybt")
 max_health = 5
 metadata/_custom_type_script = "uid://dnqtsnqt7tibk"
 
+[connection signal="damaged" from="HealthComponent" to="." method="damaged"]
 [connection signal="dead" from="HealthComponent" to="." method="is_dead"]

@@ -52,13 +52,14 @@ unique_name_in_owner = true
 position = Vector2(128, 69)
 rotation = -3.1375277
 
+[node name="SpawnerEngine" type="Node2D" parent="player" unique_id=727431027 node_paths=PackedStringArray("player", "spawn_path")]
+position = Vector2(-4, 4)
+script = ExtResource("4_fiftr")
+player = NodePath("..")
+spawn_path = NodePath("../Path2D/PathFollow2D")
+metadata/_custom_type_script = "uid://dxurshdg6ys01"
+
 [node name="Timer" type="Timer" parent="." unique_id=1947672736]
 autostart = true
 
-[node name="SpawnerEngine" type="Node2D" parent="." unique_id=727431027 node_paths=PackedStringArray("player", "spawn_path")]
-script = ExtResource("4_fiftr")
-player = NodePath("../player")
-spawn_path = NodePath("../player/Path2D/PathFollow2D")
-metadata/_custom_type_script = "uid://dxurshdg6ys01"
-
-[connection signal="timeout" from="Timer" to="SpawnerEngine" method="spawn_mob"]
+[connection signal="timeout" from="Timer" to="player/SpawnerEngine" method="spawn_mob"]

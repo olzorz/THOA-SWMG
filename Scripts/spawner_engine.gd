@@ -16,7 +16,7 @@ func spawn_mob() -> void:
 		if _can_spawn_at(spawn_position):
 			var enemy := ENEMY_SCENE.instantiate()
 			enemy.global_position = spawn_position
-			get_parent().add_child(enemy)
+			$"../..".add_child(enemy)
 			return
 
 

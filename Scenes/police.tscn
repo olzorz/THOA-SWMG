@@ -5,12 +5,13 @@
 [ext_resource type="Script" uid="uid://dnqtsnqt7tibk" path="res://Scripts/health_component.gd" id="3_8r43d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b50pw"]
-radius = 4.0
+radius = 11.0
 
 [node name="police" type="CharacterBody2D" unique_id=1554043192]
 script = ExtResource("1_b50pw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=752772768]
+position = Vector2(5, 1)
 texture = ExtResource("2_8r43d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=766969340]

@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var damage : int = 1
-const SPEED : int = 100
+@export var SPEED : int = 200
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

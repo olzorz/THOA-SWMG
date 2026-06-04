@@ -7,7 +7,7 @@ var player: Node2D
 var direction : Vector2
 @export var update_cooldown : float = 0.5
 
-var update_time : float = update_cooldown
+var update_time : float = 0
 var target_location : Vector2 = Vector2.ZERO
 
 @export var shoot_cooldown : float = 0.2

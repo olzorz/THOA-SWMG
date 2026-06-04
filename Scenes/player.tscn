@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://6a3fle7xlwxm" path="res://Scripts/player_movement.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://crmybnnkw3oum" path="res://Assets/player.png" id="1_v0iea"]
 [ext_resource type="PackedScene" uid="uid://d0n7seuaqfuqr" path="res://Scenes/gun.tscn" id="3_6t5aa"]
-[ext_resource type="Script" uid="uid://didlum7dqsxon" path="res://Scripts/gun_pivot.gd" id="3_vgqql"]
 [ext_resource type="Script" uid="uid://dnqtsnqt7tibk" path="res://Scripts/health_component.gd" id="5_fkybt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
@@ -21,9 +20,6 @@ texture = ExtResource("1_v0iea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=42625671]
 shape = SubResource("CapsuleShape2D_cvnsp")
-
-[node name="GunPivot" type="Node2D" parent="." unique_id=1582712780]
-script = ExtResource("3_vgqql")
 
 [node name="gun" parent="." unique_id=1663054832 instance=ExtResource("3_6t5aa")]
 position = Vector2(22, 4.5)

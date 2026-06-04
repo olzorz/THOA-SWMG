@@ -5,30 +5,68 @@ var hp : int = 2
 @export var movement_speed : float = 100.0
 var player: Node2D
 var direction : Vector2
-var movement_timer : bool = false
+@export var update_cooldown : float = 0.5
+
+var update_time : float = update_cooldown
 var target_location : Vector2 = Vector2.ZERO
 
+@export var shoot_cooldown : float = 0.2
+var cooldown_time : float = shoot_cooldown
+
+signal shoot
+
+enum State {
+	CHASE,
+	SHOOT,
+	IDLE
+}
+var state := State.CHASE
 
 func _ready():
 	player = $"../player"
+	
 
 func _physics_process(delta: float) -> void:
 	if player:
-		target_location = player.global_position
-	if movement_timer:
-		direction = target_location - global_position
-		if direction.length() > 100:
-			velocity = direction.normalized() * movement_speed
-		else:
-			velocity = velocity.move_toward(Vector2.ZERO, movement_speed)
-		movement_timer = false
-	look_at(target_location)
+		update_time -= delta
+		if update_time <= 0:
+			target_location = player.global_position
+			direction = target_location - global_position
+			update_time = update_cooldown
+		look_at(player.global_position)
+	else:
+		state = State.IDLE
+	
+	match state:
+		State.CHASE:
+			
+			if direction.length() > 100:
+				velocity = direction.normalized() * movement_speed
+			else:
+				state = State.SHOOT
+		
+		State.IDLE:
+			if player:
+				state = State.CHASE
+			else:
+				velocity = velocity.move_toward(Vector2.ZERO, movement_speed)
+		
+		State.SHOOT:
+			if player and direction.length() > 150:
+				state = State.CHASE
+			elif not player:
+				state = State.IDLE
+			else:
+				velocity = velocity.move_toward(Vector2.ZERO, movement_speed)
+				cooldown_time -= delta
+				if cooldown_time <= 0:
+					shoot.emit()
+					cooldown_time = shoot_cooldown
+
+
+	
 	move_and_slide()
 
 
 func is_dead() -> void:
 	queue_free()
-
-
-func movement_calculation() -> void:
-	movement_timer = true

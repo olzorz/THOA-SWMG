@@ -4,9 +4,3 @@
 
 [node name="gun" type="Node2D" unique_id=1663054832]
 script = ExtResource("1_oqrbh")
-
-[node name="Timer" type="Timer" parent="." unique_id=1222935564]
-wait_time = 0.5
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="shoot_time"]

@@ -6,8 +6,14 @@ var hp : int = 2
 var player: Node2D
 var direction : Vector2
 @export var update_cooldown : float = 0.5
+
 var update_time : float = update_cooldown
 var target_location : Vector2 = Vector2.ZERO
+
+@export var shoot_cooldown : float = 0.2
+var cooldown_time : float = shoot_cooldown
+
+signal shoot
 
 enum State {
 	CHASE,
@@ -52,6 +58,10 @@ func _physics_process(delta: float) -> void:
 				state = State.IDLE
 			else:
 				velocity = velocity.move_toward(Vector2.ZERO, movement_speed)
+				cooldown_time -= delta
+				if cooldown_time <= 0:
+					shoot.emit()
+					cooldown_time = shoot_cooldown
 
 
 	

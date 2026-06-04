@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bhdfpyul7vfk5" path="res://Scenes/player.tscn" id="1_x87qo"]
 [ext_resource type="Texture2D" uid="uid://cntdaq1scsi55" path="res://Assets/spritesheet.png" id="2_6h5vk"]
+[ext_resource type="Script" uid="uid://cysdsowrgwmi8" path="res://Scripts/point_light_2d.gd" id="2_fiftr"]
 [ext_resource type="Script" uid="uid://dxurshdg6ys01" path="res://Scripts/spawner_engine.gd" id="4_fiftr"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6h5vk"]
@@ -60,15 +61,15 @@ tile_map_data = PackedByteArray("AADe/+H/AQAAAAAAAADe/+L/AQAAAAAAAADe/+P/AQAAAAA
 tile_set = SubResource("TileSet_fiftr")
 rendering_quadrant_size = 8
 
-[node name="player" parent="." unique_id=1717010026 instance=ExtResource("1_x87qo")]
-position = Vector2(4, -4)
-movement_speed = 100.0
-
-[node name="PointLight2D" type="PointLight2D" parent="player" unique_id=1808399134]
-position = Vector2(-4, 4)
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1808399134]
 shadow_enabled = true
 shadow_filter = 2
 texture = SubResource("GradientTexture2D_fiftr")
+script = ExtResource("2_fiftr")
+
+[node name="player" parent="." unique_id=1717010026 instance=ExtResource("1_x87qo")]
+position = Vector2(4, -4)
+movement_speed = 100.0
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1192824796]
 zoom = Vector2(3, 3)

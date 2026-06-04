@@ -31,6 +31,7 @@ player = true
 
 [node name="HealthComponent" type="Node" parent="." unique_id=900952249]
 script = ExtResource("5_fkybt")
+max_health = 5
 metadata/_custom_type_script = "uid://dnqtsnqt7tibk"
 
 [connection signal="dead" from="HealthComponent" to="." method="is_dead"]

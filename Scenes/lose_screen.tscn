@@ -3,6 +3,7 @@
 [node name="lose_screen" type="Node2D" unique_id=819457918]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1346635789]
+zoom = Vector2(3, 3)
 
 [node name="Label" type="Label" parent="." unique_id=1586593391]
 offset_left = -35.0

@@ -1,24 +1,22 @@
 class_name SpawnerEngine extends Node2D
 
-
-@export var ENEMY_SCENE := preload("res://Scenes/police.tscn")
-@export var SPAWN_ATTEMPTS := 20
-@export var player: Node2D
-@export var spawn_path: PathFollow2D
 const WORLD_MASK := 1
 
+@export var enemy_scene := preload("res://Scenes/police.tscn")
+@export var spawn_attempts := 20
+@export var player: Node2D
+@export var spawn_path: PathFollow2D
 
 func spawn_mob() -> void:
-	for i in SPAWN_ATTEMPTS:
+	for i in spawn_attempts:
 		spawn_path.progress_ratio = randf()
 		var spawn_position : Vector2 = spawn_path.global_position
 
 		if _can_spawn_at(spawn_position):
-			var enemy := ENEMY_SCENE.instantiate()
+			var enemy := enemy_scene.instantiate()
 			enemy.global_position = spawn_position
 			$"../..".add_child(enemy)
 			return
-
 
 func _can_spawn_at(spawn_position: Vector2) -> bool:
 	var space_state := get_world_2d().direct_space_state

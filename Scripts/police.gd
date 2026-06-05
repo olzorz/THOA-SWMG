@@ -1,18 +1,5 @@
 extends CharacterBody2D
 
-
-var hp : int = 2
-@export var movement_speed : float = 100.0
-var player: Node2D
-var direction : Vector2
-@export var update_cooldown : float = 0.5
-
-var update_time : float = 0
-var target_location : Vector2 = Vector2.ZERO
-
-@export var shoot_cooldown : float = 0.2
-var cooldown_time : float = shoot_cooldown
-
 signal shoot
 
 enum State {
@@ -20,11 +7,21 @@ enum State {
 	SHOOT,
 	IDLE
 }
+
+@export var movement_speed : float = 100.0
+@export var update_cooldown : float = 0.5
+@export var shoot_cooldown : float = 0.2
+
+var hp : int = 2
+var player: Node2D
+var direction : Vector2
+var update_time : float = 0
+var target_location : Vector2 = Vector2.ZERO
+var cooldown_time : float = shoot_cooldown
 var state := State.CHASE
 
 func _ready():
 	player = $"../player"
-	
 
 func _physics_process(delta: float) -> void:
 	if player:
@@ -36,21 +33,21 @@ func _physics_process(delta: float) -> void:
 		look_at(player.global_position)
 	else:
 		state = State.IDLE
-	
+
 	match state:
 		State.CHASE:
-			
+
 			if direction.length() > 100:
 				velocity = direction.normalized() * movement_speed
 			else:
 				state = State.SHOOT
-		
+
 		State.IDLE:
 			if player:
 				state = State.CHASE
 			else:
 				velocity = velocity.move_toward(Vector2.ZERO, movement_speed)
-		
+
 		State.SHOOT:
 			if player and direction.length() > 150:
 				state = State.CHASE
@@ -63,10 +60,7 @@ func _physics_process(delta: float) -> void:
 					shoot.emit()
 					cooldown_time = shoot_cooldown
 
-
-	
 	move_and_slide()
-
 
 func is_dead() -> void:
 	queue_free()

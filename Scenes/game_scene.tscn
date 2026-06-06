@@ -70,6 +70,12 @@ rendering_quadrant_size = 8
 [node name="cash" parent="." unique_id=169371698 instance=ExtResource("6_rgj8m")]
 position = Vector2(92, 58)
 
+[node name="cash2" parent="." unique_id=258091549 instance=ExtResource("6_rgj8m")]
+position = Vector2(-217, 56)
+
+[node name="cash3" parent="." unique_id=266164120 instance=ExtResource("6_rgj8m")]
+position = Vector2(-77, -293)
+
 [node name="Timer" type="Timer" parent="." unique_id=1947672736]
 autostart = true
 
@@ -141,11 +147,7 @@ player = NodePath("..")
 spawn_path = NodePath("../Path2D/PathFollow2D")
 metadata/_custom_type_script = "uid://dxurshdg6ys01"
 
-[node name="cash3" parent="." unique_id=266164120 instance=ExtResource("6_rgj8m")]
-position = Vector2(-77, -293)
-
-[node name="cash2" parent="." unique_id=258091549 instance=ExtResource("6_rgj8m")]
-position = Vector2(-217, 56)
-
 [connection signal="picked_up" from="cash" to="." method="money_gain"]
+[connection signal="picked_up" from="cash2" to="." method="money_gain"]
+[connection signal="picked_up" from="cash3" to="." method="money_gain"]
 [connection signal="timeout" from="Timer" to="player/SpawnerEngine" method="spawn_mob"]

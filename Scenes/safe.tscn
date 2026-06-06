@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bmgu8a11xiw07"]
+
+[ext_resource type="Script" uid="uid://cmxvmm7mhwuvv" path="res://safe.gd" id="1_k8se0"]
+[ext_resource type="PackedScene" uid="uid://djxsx8etb7tg3" path="res://Scenes/interactable.tscn" id="2_23s64"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_342nx"]
+load_path = "res://.godot/imported/safe.png-91c585b773c55be83dbc70071a340456.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fedsi"]
+radius = 17.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8se0"]
+size = Vector2(26, 27)
+
+[node name="safe" type="StaticBody2D" unique_id=912255686]
+script = ExtResource("1_k8se0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=828369144]
+position = Vector2(0, 17)
+texture = SubResource("CompressedTexture2D_342nx")
+hframes = 2
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Interactable" parent="." unique_id=35724694 instance=ExtResource("2_23s64")]
+interact_name = "F to Lockpick"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1134549031]
+shape = SubResource("CircleShape2D_fedsi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1912287786]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_k8se0")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=948061763]
+position = Vector2(-4, 19)

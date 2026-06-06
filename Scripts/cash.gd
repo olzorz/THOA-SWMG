@@ -7,6 +7,7 @@ signal picked_up(amount: int)
 
 func _ready() -> void:
 	interactable.interact = _on_interact
+	interactable.interact_name = "F to steal £" + str(amount)
 	
 func _on_interact() -> void:
 	picked_up.emit(amount)

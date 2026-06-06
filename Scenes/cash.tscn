@@ -9,6 +9,7 @@ radius = 9.0
 
 [node name="cash" type="Node2D" unique_id=169371698]
 script = ExtResource("1_2xbqq")
+amount = 15
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1877170210]
 texture = ExtResource("1_ua8r7")

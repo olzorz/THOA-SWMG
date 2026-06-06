@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cysdsowrgwmi8" path="res://Scripts/point_light_2d.gd" id="2_fiftr"]
 [ext_resource type="Script" uid="uid://dxurshdg6ys01" path="res://Scripts/spawner_engine.gd" id="4_fiftr"]
 [ext_resource type="PackedScene" uid="uid://bbcgq07ql850u" path="res://Scenes/cash.tscn" id="6_rgj8m"]
+[ext_resource type="PackedScene" uid="uid://bmgu8a11xiw07" path="res://Scenes/safe.tscn" id="7_2fmhe"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rgj8m"]
 polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -121,7 +122,16 @@ shadow_filter = 2
 texture = SubResource("GradientTexture2D_fiftr")
 script = ExtResource("2_fiftr")
 
+[node name="safe" parent="." unique_id=871527799 instance=ExtResource("7_2fmhe")]
+position = Vector2(-97, -272)
+rotation = -0.7205777
+
+[node name="safe2" parent="." unique_id=912255686 instance=ExtResource("7_2fmhe")]
+position = Vector2(287, -55.999996)
+rotation = 0.427898
+
 [node name="player" parent="." unique_id=1717010026 instance=ExtResource("1_x87qo")]
+z_index = 1
 position = Vector2(4, -4)
 movement_speed = 100.0
 

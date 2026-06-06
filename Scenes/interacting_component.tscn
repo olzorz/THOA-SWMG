@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cs153yr2ge4vb"]
+
+[ext_resource type="Script" uid="uid://cln2ai401vjwl" path="res://Scripts/interacting_component.gd" id="1_hkgi3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wcss1"]
+radius = 18.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_hkgi3"]
+font_size = 10
+
+[node name="InteractingComponent" type="Node2D" unique_id=697597145]
+script = ExtResource("1_hkgi3")
+
+[node name="InteractRange" type="Area2D" parent="." unique_id=319101967]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange" unique_id=936924908]
+shape = SubResource("CircleShape2D_wcss1")
+
+[node name="InteractLabel" type="Label" parent="." unique_id=739148786]
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.5
+offset_top = -38.0
+offset_right = 47.5
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "E to Interact"
+label_settings = SubResource("LabelSettings_hkgi3")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="area_entered" from="InteractRange" to="." method="_on_interact_range_area_entered"]
+[connection signal="area_exited" from="InteractRange" to="." method="_on_interact_range_area_exited"]

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://crmybnnkw3oum" path="res://Assets/player.png" id="1_v0iea"]
 [ext_resource type="PackedScene" uid="uid://d0n7seuaqfuqr" path="res://Scenes/gun.tscn" id="3_6t5aa"]
 [ext_resource type="Script" uid="uid://dnqtsnqt7tibk" path="res://Scripts/health_component.gd" id="5_fkybt"]
+[ext_resource type="PackedScene" uid="uid://cs153yr2ge4vb" path="res://Scenes/interacting_component.tscn" id="5_x3wgy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
 radius = 8.0
@@ -29,6 +30,8 @@ player = true
 script = ExtResource("5_fkybt")
 max_health = 5
 metadata/_custom_type_script = "uid://dnqtsnqt7tibk"
+
+[node name="InteractingComponent" parent="." unique_id=697597145 instance=ExtResource("5_x3wgy")]
 
 [connection signal="damaged" from="HealthComponent" to="." method="damaged"]
 [connection signal="dead" from="HealthComponent" to="." method="is_dead"]

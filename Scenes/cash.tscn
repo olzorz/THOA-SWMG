@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bbcgq07ql850u"]
+
+[ext_resource type="Script" uid="uid://mgxutqtjkbwc" path="res://Scripts/cash.gd" id="1_2xbqq"]
+[ext_resource type="Texture2D" uid="uid://dcksw8xfjpiy7" path="res://Assets/money.png" id="1_ua8r7"]
+[ext_resource type="PackedScene" uid="uid://djxsx8etb7tg3" path="res://Scenes/interactable.tscn" id="3_mw2j7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x35g7"]
+radius = 9.0
+
+[node name="cash" type="Node2D" unique_id=169371698]
+script = ExtResource("1_2xbqq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1877170210]
+texture = ExtResource("1_ua8r7")
+
+[node name="Interactable" parent="." unique_id=35724694 instance=ExtResource("3_mw2j7")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1768682005]
+shape = SubResource("CircleShape2D_x35g7")

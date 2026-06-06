@@ -14,6 +14,7 @@ script = ExtResource("1_2xbqq")
 texture = ExtResource("1_ua8r7")
 
 [node name="Interactable" parent="." unique_id=35724694 instance=ExtResource("3_mw2j7")]
+interact_name = "F to Steal £1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1768682005]
 shape = SubResource("CircleShape2D_x35g7")

@@ -14,8 +14,9 @@ func _input(event: InputEvent) -> void:
 			interact_label.hide()
 			if current_interactions[0].is_interactable:
 				await current_interactions[0].interact.call()
-			
+				current_interactions.remove_at(0)
 			can_interact = true
+			
 
 func _process(_delta: float) -> void:
 	if current_interactions and can_interact:

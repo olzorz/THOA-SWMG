@@ -55,9 +55,9 @@ fill_to = Vector2(0.84347826, 0.16086957)
 
 [sub_resource type="Curve2D" id="Curve2D_fiftr"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 128, 69, 0, 0, 0, 0, -118, 68, 0, 0, 0, 0, -117, -79, 0, 0, 0, 0, 128, -79)
+"points": PackedVector2Array(0, 0, 0, 0, 99.66667, 98.333336, 0, 0, 0, 0, -99.333336, 98.66667, 0, 0, 0, 0, -100.333336, -98.333336, 0, 0, 0, 0, 101, -99.333336, 0, 0, 0, 0, 99.66667, 98.333336)
 }
-point_count = 4
+point_count = 5
 
 [node name="game_scene" type="Node2D" unique_id=158784429]
 script = ExtResource("1_1ixah")
@@ -147,8 +147,8 @@ curve = SubResource("Curve2D_fiftr")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="player/Path2D" unique_id=2031319132]
 unique_name_in_owner = true
-position = Vector2(128, 69)
-rotation = -3.1375277
+position = Vector2(99.66667, 98.333336)
+rotation = 3.1399176
 
 [node name="SpawnerEngine" type="Node2D" parent="player" unique_id=727431027 node_paths=PackedStringArray("player", "spawn_path")]
 position = Vector2(-4, 4)

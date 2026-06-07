@@ -10,9 +10,16 @@ config_version=5
 
 [application]
 
-config/name="thoa"
+config/name="THOA SWMG"
 run/main_scene="uid://by15dpdt6v6bq"
 config/features=PackedStringArray("4.6", "Mobile")
+boot_splash/show_image=false
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
 
 [input]
 

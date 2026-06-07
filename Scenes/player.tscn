@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bhdfpyul7vfk5"]
 
-[ext_resource type="Script" uid="uid://6a3fle7xlwxm" path="res://Scripts/player_movement.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://6a3fle7xlwxm" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://crmybnnkw3oum" path="res://Assets/player.png" id="1_v0iea"]
 [ext_resource type="PackedScene" uid="uid://d0n7seuaqfuqr" path="res://Scenes/gun.tscn" id="3_6t5aa"]
 [ext_resource type="Script" uid="uid://dnqtsnqt7tibk" path="res://Scripts/health_component.gd" id="5_fkybt"]

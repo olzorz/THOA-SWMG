@@ -24,10 +24,6 @@ func _physics_process(_delta: float) -> void:
 		velocity = velocity.move_toward(Vector2.ZERO, movement_speed)
 
 	look_at(get_global_mouse_position())
-	#if rotation_degrees > 90 or rotation_degrees < -90:
-	#	scale.y = -1
-	#else:
-	#	scale.y = 1
 	move_and_slide()
 
 func is_dead() -> void:
@@ -36,7 +32,7 @@ func is_dead() -> void:
 	var lose := LOSE_SCREEN.instantiate()
 	lose.global_position = lose_position
 	get_parent().add_child(lose)
-	queue_free() # Replace with function body.
+	queue_free()
 
 func damaged() -> void:
 	health_bar.value = health_component.current_health
